@@ -66,10 +66,16 @@ namespace AlarmApp
             label3.Visible = false;
         }
 
+        private void LoopSound(int newState)
+        {
+            wmPlayer.controls.play();
+        }
+
         private void PlaySound()
         {
             wmPlayer.URL = textBox1.Text;
             wmPlayer.controls.play();
+            wmPlayer.PlayStateChange += LoopSound;
             this.FormClosing += Form1_FormClosing;
             challengeForm = new Challenge(textBox2.Text);
             challengeForm.Completed += challenge_Completed;
@@ -95,6 +101,7 @@ namespace AlarmApp
 
         private void StopSound()
         {
+            wmPlayer.PlayStateChange -= LoopSound;
             wmPlayer.controls.stop();
             this.FormClosing -= Form1_FormClosing;
         }
