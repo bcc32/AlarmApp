@@ -66,6 +66,21 @@ namespace AlarmApp
             label3.Visible = false;
         }
 
+        private TimeSpan IntervalToEndTime()
+        {
+            DateTime endTime = dateTimePicker1.Value;
+            TimeSpan interval;
+            if (DateTime.Now.TimeOfDay < endTime.TimeOfDay)
+            {
+                interval = endTime.TimeOfDay - DateTime.Now.TimeOfDay;
+            }
+            else
+            {
+                interval = (DateTime.Now.Date.AddDays(1) + endTime.TimeOfDay) - DateTime.Now;
+            }
+            return interval;
+        }
+
         private void LoopSound(int newState)
         {
             wmPlayer.controls.play();
@@ -84,17 +99,7 @@ namespace AlarmApp
 
         private void SetAlarm()
         {
-            DateTime endTime = dateTimePicker1.Value;
-            TimeSpan interval;
-            if (DateTime.Now.TimeOfDay < endTime.TimeOfDay)
-            {
-                interval = endTime.TimeOfDay - DateTime.Now.TimeOfDay;
-            }
-            else
-            {
-                interval = (DateTime.Now.Date.AddDays(1) + endTime.TimeOfDay) - DateTime.Now;
-            }
-            timer1.Interval = (int)interval.TotalMilliseconds;
+            timer1.Interval = (int)IntervalToEndTime().TotalMilliseconds;
             timer1.Start();
             label3.Visible = true;
         }
