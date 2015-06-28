@@ -21,7 +21,7 @@ namespace AlarmApp
         {
             InitializeComponent();
             this.filename = filename;
-            textBox1.Text = new System.IO.StreamReader(filename).ReadToEnd();
+            label1.Text = new System.IO.StreamReader(filename).ReadToEnd();
         }
 
         private void Challenge_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,14 +32,14 @@ namespace AlarmApp
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (!textBox1.Text.StartsWith(textBox2.Text))
+            if (!label1.Text.StartsWith(textBox2.Text))
             {
                 int cutoff = textBox2.Text.Length > 10 ? 10 : textBox2.Text.Length;
                 textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - cutoff);
                 textBox2.SelectionStart = textBox2.Text.Length;
                 textBox2.SelectionLength = 0;
             }
-            else if (textBox1.Text.Equals(textBox2.Text))
+            else if (label1.Text.Equals(textBox2.Text))
             {
                 Completed(this, new EventArgs());
                 this.FormClosing -= Challenge_FormClosing;
