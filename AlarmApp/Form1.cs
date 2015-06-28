@@ -45,7 +45,8 @@ namespace AlarmApp
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+                e.Cancel = true;
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)

@@ -26,7 +26,8 @@ namespace AlarmApp
 
         private void Challenge_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            if (e.CloseReason == CloseReason.UserClosing)
+                e.Cancel = true;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
