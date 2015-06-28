@@ -38,6 +38,11 @@ namespace AlarmApp
             openFileDialog2.ShowDialog();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            PlaySound();
+        }
+
         private void challenge_Completed(object sender, EventArgs e)
         {
             StopSound();
