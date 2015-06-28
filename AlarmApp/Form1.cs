@@ -19,26 +19,26 @@ namespace AlarmApp
         public Form1()
         {
             InitializeComponent();
-            openFileDialog1.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            soundFileDialog.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             wmPlayer = new WMPLib.WindowsMediaPlayer();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_SetAlarm_Click(object sender, EventArgs e)
         {
             SetAlarm();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_BrowseSoundFile_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            soundFileDialog.ShowDialog();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btn_BrowseChallengeFile_Click(object sender, EventArgs e)
         {
-            openFileDialog2.ShowDialog();
+            challengeFileDialog.ShowDialog();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_TryChallenge_Click(object sender, EventArgs e)
         {
             PlaySound();
         }
@@ -54,26 +54,26 @@ namespace AlarmApp
                 e.Cancel = true;
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        private void soundFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            textBox1.Text = openFileDialog1.FileName;
+            tbx_SoundFileName.Text = soundFileDialog.FileName;
         }
 
-        private void openFileDialog2_FileOk(object sender, CancelEventArgs e)
+        private void challengeFileDialog_FileOk(object sender, CancelEventArgs e)
         {
-            textBox2.Text = openFileDialog2.FileName;
+            tbx_ChallengeFileName.Text = challengeFileDialog.FileName;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void alarmTimer_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
+            alarmTimer.Stop();
             PlaySound();
-            label3.Visible = false;
+            lbl_AlarmSet.Visible = false;
         }
 
         private TimeSpan IntervalToEndTime()
         {
-            DateTime endTime = dateTimePicker1.Value;
+            DateTime endTime = endTimePicker.Value;
             TimeSpan interval;
             if (DateTime.Now.TimeOfDay < endTime.TimeOfDay)
             {
@@ -93,20 +93,20 @@ namespace AlarmApp
 
         private void PlaySound()
         {
-            wmPlayer.URL = textBox1.Text;
+            wmPlayer.URL = tbx_SoundFileName.Text;
             wmPlayer.controls.play();
             wmPlayer.PlayStateChange += LoopSound;
             this.FormClosing += Form1_FormClosing;
-            challengeForm = new Challenge(textBox2.Text);
+            challengeForm = new Challenge(tbx_ChallengeFileName.Text);
             challengeForm.Completed += challenge_Completed;
             challengeForm.ShowDialog(this);
         }
 
         private void SetAlarm()
         {
-            timer1.Interval = (int)IntervalToEndTime().TotalMilliseconds;
-            timer1.Start();
-            label3.Visible = true;
+            alarmTimer.Interval = (int)IntervalToEndTime().TotalMilliseconds;
+            alarmTimer.Start();
+            lbl_AlarmSet.Visible = true;
         }
 
         private void StopSound()

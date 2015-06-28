@@ -21,7 +21,7 @@ namespace AlarmApp
         {
             InitializeComponent();
             this.filename = filename;
-            label1.Text = new System.IO.StreamReader(filename).ReadToEnd();
+            lbl_ChallengeText.Text = new System.IO.StreamReader(filename).ReadToEnd();
         }
 
         private void Challenge_FormClosing(object sender, FormClosingEventArgs e)
@@ -30,16 +30,16 @@ namespace AlarmApp
                 e.Cancel = true;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void tbx_Answer_TextChanged(object sender, EventArgs e)
         {
-            if (!label1.Text.StartsWith(textBox2.Text))
+            if (!lbl_ChallengeText.Text.StartsWith(tbx_Answer.Text))
             {
-                int cutoff = textBox2.Text.Length > 10 ? 10 : textBox2.Text.Length;
-                textBox2.Text = textBox2.Text.Substring(0, textBox2.Text.Length - cutoff);
-                textBox2.SelectionStart = textBox2.Text.Length;
-                textBox2.SelectionLength = 0;
+                int cutoff = tbx_Answer.Text.Length > 10 ? 10 : tbx_Answer.Text.Length;
+                tbx_Answer.Text = tbx_Answer.Text.Substring(0, tbx_Answer.Text.Length - cutoff);
+                tbx_Answer.SelectionStart = tbx_Answer.Text.Length;
+                tbx_Answer.SelectionLength = 0;
             }
-            else if (label1.Text.Equals(textBox2.Text))
+            else if (lbl_ChallengeText.Text.Equals(tbx_Answer.Text))
             {
                 Completed(this, new EventArgs());
                 this.FormClosing -= Challenge_FormClosing;

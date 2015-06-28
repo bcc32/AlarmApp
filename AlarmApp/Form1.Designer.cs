@@ -29,154 +29,152 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.button4 = new System.Windows.Forms.Button();
+            this.endTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.lbl_Time = new System.Windows.Forms.Label();
+            this.alarmTimer = new System.Windows.Forms.Timer(this.components);
+            this.btn_SetAlarm = new System.Windows.Forms.Button();
+            this.soundFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.lbl_SoundFile = new System.Windows.Forms.Label();
+            this.tbx_SoundFileName = new System.Windows.Forms.TextBox();
+            this.btn_BrowseSoundFile = new System.Windows.Forms.Button();
+            this.lbl_AlarmSet = new System.Windows.Forms.Label();
+            this.tbx_ChallengeFileName = new System.Windows.Forms.TextBox();
+            this.lbl_Challenge = new System.Windows.Forms.Label();
+            this.btn_BrowseChallengeFile = new System.Windows.Forms.Button();
+            this.challengeFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btn_TryChallenge = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // endTimePicker
             // 
-            this.dateTimePicker1.CustomFormat = "HH:mm";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(52, 7);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(96, 20);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Value = new System.DateTime(2015, 6, 28, 0, 0, 0, 0);
+            this.endTimePicker.CustomFormat = "HH:mm";
+            this.endTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.endTimePicker.Location = new System.Drawing.Point(52, 7);
+            this.endTimePicker.Name = "endTimePicker";
+            this.endTimePicker.ShowUpDown = true;
+            this.endTimePicker.Size = new System.Drawing.Size(96, 20);
+            this.endTimePicker.TabIndex = 0;
+            this.endTimePicker.Value = new System.DateTime(2015, 6, 28, 0, 0, 0, 0);
             // 
-            // label1
+            // lbl_Time
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "&Time:";
+            this.lbl_Time.AutoSize = true;
+            this.lbl_Time.Location = new System.Drawing.Point(13, 13);
+            this.lbl_Time.Name = "lbl_Time";
+            this.lbl_Time.Size = new System.Drawing.Size(33, 13);
+            this.lbl_Time.TabIndex = 1;
+            this.lbl_Time.Text = "&Time:";
             // 
-            // timer1
+            // alarmTimer
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.alarmTimer.Tick += new System.EventHandler(this.alarmTimer_Tick);
             // 
-            // button1
+            // btn_SetAlarm
             // 
-            this.button1.Location = new System.Drawing.Point(12, 90);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Set &Alarm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_SetAlarm.Location = new System.Drawing.Point(12, 90);
+            this.btn_SetAlarm.Name = "btn_SetAlarm";
+            this.btn_SetAlarm.Size = new System.Drawing.Size(256, 23);
+            this.btn_SetAlarm.TabIndex = 2;
+            this.btn_SetAlarm.Text = "Set &Alarm";
+            this.btn_SetAlarm.UseVisualStyleBackColor = true;
+            this.btn_SetAlarm.Click += new System.EventHandler(this.btn_SetAlarm_Click);
             // 
-            // openFileDialog1
+            // soundFileDialog
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            this.soundFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.soundFileDialog_FileOk);
             // 
-            // label2
+            // lbl_SoundFile
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "&Sound file:";
+            this.lbl_SoundFile.AutoSize = true;
+            this.lbl_SoundFile.Location = new System.Drawing.Point(13, 36);
+            this.lbl_SoundFile.Name = "lbl_SoundFile";
+            this.lbl_SoundFile.Size = new System.Drawing.Size(57, 13);
+            this.lbl_SoundFile.TabIndex = 3;
+            this.lbl_SoundFile.Text = "&Sound file:";
             // 
-            // textBox1
+            // tbx_SoundFileName
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 20);
-            this.textBox1.TabIndex = 4;
+            this.tbx_SoundFileName.Location = new System.Drawing.Point(76, 33);
+            this.tbx_SoundFileName.Name = "tbx_SoundFileName";
+            this.tbx_SoundFileName.Size = new System.Drawing.Size(111, 20);
+            this.tbx_SoundFileName.TabIndex = 4;
             // 
-            // button2
+            // btn_BrowseSoundFile
             // 
-            this.button2.Location = new System.Drawing.Point(193, 31);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "&Browse...";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btn_BrowseSoundFile.Location = new System.Drawing.Point(193, 31);
+            this.btn_BrowseSoundFile.Name = "btn_BrowseSoundFile";
+            this.btn_BrowseSoundFile.Size = new System.Drawing.Size(75, 23);
+            this.btn_BrowseSoundFile.TabIndex = 5;
+            this.btn_BrowseSoundFile.Text = "&Browse...";
+            this.btn_BrowseSoundFile.UseVisualStyleBackColor = true;
+            this.btn_BrowseSoundFile.Click += new System.EventHandler(this.btn_BrowseSoundFile_Click);
             // 
-            // label3
+            // lbl_AlarmSet
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(154, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Alarm Set!";
-            this.label3.Visible = false;
+            this.lbl_AlarmSet.AutoSize = true;
+            this.lbl_AlarmSet.Location = new System.Drawing.Point(154, 13);
+            this.lbl_AlarmSet.Name = "lbl_AlarmSet";
+            this.lbl_AlarmSet.Size = new System.Drawing.Size(55, 13);
+            this.lbl_AlarmSet.TabIndex = 6;
+            this.lbl_AlarmSet.Text = "Alarm Set!";
+            this.lbl_AlarmSet.Visible = false;
             // 
-            // textBox2
+            // tbx_ChallengeFileName
             // 
-            this.textBox2.Location = new System.Drawing.Point(76, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(111, 20);
-            this.textBox2.TabIndex = 7;
+            this.tbx_ChallengeFileName.Location = new System.Drawing.Point(76, 60);
+            this.tbx_ChallengeFileName.Name = "tbx_ChallengeFileName";
+            this.tbx_ChallengeFileName.Size = new System.Drawing.Size(111, 20);
+            this.tbx_ChallengeFileName.TabIndex = 7;
             // 
-            // label4
+            // lbl_Challenge
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "&Challenge:";
+            this.lbl_Challenge.AutoSize = true;
+            this.lbl_Challenge.Location = new System.Drawing.Point(13, 63);
+            this.lbl_Challenge.Name = "lbl_Challenge";
+            this.lbl_Challenge.Size = new System.Drawing.Size(57, 13);
+            this.lbl_Challenge.TabIndex = 8;
+            this.lbl_Challenge.Text = "&Challenge:";
             // 
-            // button3
+            // btn_BrowseChallengeFile
             // 
-            this.button3.Location = new System.Drawing.Point(193, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "B&rowse...";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btn_BrowseChallengeFile.Location = new System.Drawing.Point(193, 58);
+            this.btn_BrowseChallengeFile.Name = "btn_BrowseChallengeFile";
+            this.btn_BrowseChallengeFile.Size = new System.Drawing.Size(75, 23);
+            this.btn_BrowseChallengeFile.TabIndex = 9;
+            this.btn_BrowseChallengeFile.Text = "B&rowse...";
+            this.btn_BrowseChallengeFile.UseVisualStyleBackColor = true;
+            this.btn_BrowseChallengeFile.Click += new System.EventHandler(this.btn_BrowseChallengeFile_Click);
             // 
-            // openFileDialog2
+            // challengeFileDialog
             // 
-            this.openFileDialog2.FileName = "openFileDialog2";
-            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
+            this.challengeFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.challengeFileDialog_FileOk);
             // 
-            // button4
+            // btn_TryChallenge
             // 
-            this.button4.Location = new System.Drawing.Point(12, 119);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(256, 23);
-            this.button4.TabIndex = 10;
-            this.button4.Text = "Tr&y Challenge";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btn_TryChallenge.Location = new System.Drawing.Point(12, 119);
+            this.btn_TryChallenge.Name = "btn_TryChallenge";
+            this.btn_TryChallenge.Size = new System.Drawing.Size(256, 23);
+            this.btn_TryChallenge.TabIndex = 10;
+            this.btn_TryChallenge.Text = "Tr&y Challenge";
+            this.btn_TryChallenge.UseVisualStyleBackColor = true;
+            this.btn_TryChallenge.Click += new System.EventHandler(this.btn_TryChallenge_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(280, 151);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.btn_TryChallenge);
+            this.Controls.Add(this.btn_BrowseChallengeFile);
+            this.Controls.Add(this.lbl_Challenge);
+            this.Controls.Add(this.tbx_ChallengeFileName);
+            this.Controls.Add(this.lbl_AlarmSet);
+            this.Controls.Add(this.btn_BrowseSoundFile);
+            this.Controls.Add(this.tbx_SoundFileName);
+            this.Controls.Add(this.lbl_SoundFile);
+            this.Controls.Add(this.btn_SetAlarm);
+            this.Controls.Add(this.lbl_Time);
+            this.Controls.Add(this.endTimePicker);
             this.Name = "Form1";
             this.Text = "Alarm";
             this.ResumeLayout(false);
@@ -186,20 +184,20 @@
 
         #endregion
 
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DateTimePicker endTimePicker;
+        private System.Windows.Forms.Label lbl_Time;
+        private System.Windows.Forms.Timer alarmTimer;
+        private System.Windows.Forms.Button btn_SetAlarm;
+        private System.Windows.Forms.OpenFileDialog soundFileDialog;
+        private System.Windows.Forms.Label lbl_SoundFile;
+        private System.Windows.Forms.TextBox tbx_SoundFileName;
+        private System.Windows.Forms.Button btn_BrowseSoundFile;
+        private System.Windows.Forms.Label lbl_AlarmSet;
+        private System.Windows.Forms.Label lbl_Challenge;
+        private System.Windows.Forms.Button btn_BrowseChallengeFile;
+        private System.Windows.Forms.OpenFileDialog challengeFileDialog;
+        private System.Windows.Forms.Button btn_TryChallenge;
+        private System.Windows.Forms.TextBox tbx_ChallengeFileName;
     }
 }
 

@@ -28,50 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.tbx_Answer = new System.Windows.Forms.TextBox();
+            this.pnl_ChallengeText = new System.Windows.Forms.Panel();
+            this.lbl_ChallengeText = new System.Windows.Forms.Label();
+            this.pnl_ChallengeText.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox2
+            // tbx_Answer
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 224);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(511, 136);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tbx_Answer.Location = new System.Drawing.Point(12, 224);
+            this.tbx_Answer.Multiline = true;
+            this.tbx_Answer.Name = "tbx_Answer";
+            this.tbx_Answer.Size = new System.Drawing.Size(511, 136);
+            this.tbx_Answer.TabIndex = 1;
+            this.tbx_Answer.TextChanged += new System.EventHandler(this.tbx_Answer_TextChanged);
             // 
-            // panel1
+            // pnl_ChallengeText
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(511, 206);
-            this.panel1.TabIndex = 2;
+            this.pnl_ChallengeText.AutoScroll = true;
+            this.pnl_ChallengeText.Controls.Add(this.lbl_ChallengeText);
+            this.pnl_ChallengeText.Location = new System.Drawing.Point(12, 12);
+            this.pnl_ChallengeText.Name = "pnl_ChallengeText";
+            this.pnl_ChallengeText.Size = new System.Drawing.Size(511, 206);
+            this.pnl_ChallengeText.TabIndex = 2;
             // 
-            // label1
+            // lbl_ChallengeText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 0;
+            this.lbl_ChallengeText.AutoSize = true;
+            this.lbl_ChallengeText.Location = new System.Drawing.Point(3, 0);
+            this.lbl_ChallengeText.Name = "lbl_ChallengeText";
+            this.lbl_ChallengeText.Size = new System.Drawing.Size(0, 13);
+            this.lbl_ChallengeText.TabIndex = 0;
             // 
             // Challenge
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 372);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.pnl_ChallengeText);
+            this.Controls.Add(this.tbx_Answer);
             this.Name = "Challenge";
             this.Text = "Challenge";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Challenge_FormClosing);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_ChallengeText.ResumeLayout(false);
+            this.pnl_ChallengeText.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -79,8 +79,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbx_Answer;
+        private System.Windows.Forms.Panel pnl_ChallengeText;
+        private System.Windows.Forms.Label lbl_ChallengeText;
     }
 }
