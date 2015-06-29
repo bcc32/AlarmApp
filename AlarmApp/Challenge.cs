@@ -13,6 +13,7 @@ namespace AlarmApp
     public partial class Challenge : Form
     {
         private string filename;
+        private string challengeText;
 
         public delegate void ChallengeCompletedHandler(object sender, EventArgs e);
         public event ChallengeCompletedHandler Completed;
@@ -21,7 +22,7 @@ namespace AlarmApp
         {
             InitializeComponent();
             this.filename = filename;
-            lbl_ChallengeText.Text = new System.IO.StreamReader(filename).ReadToEnd();
+            lbl_ChallengeText.Text = challengeText = new System.IO.StreamReader(filename).ReadToEnd();
         }
 
         private void Challenge_FormClosing(object sender, FormClosingEventArgs e)
@@ -32,14 +33,19 @@ namespace AlarmApp
 
         private void tbx_Answer_TextChanged(object sender, EventArgs e)
         {
-            if (!lbl_ChallengeText.Text.StartsWith(tbx_Answer.Text))
+            // TODO cleanup
+            if (!challengeText.StartsWith(tbx_Answer.Text))
             {
-                int cutoff = tbx_Answer.Text.Length > 10 ? 10 : tbx_Answer.Text.Length;
-                tbx_Answer.Text = tbx_Answer.Text.Substring(0, tbx_Answer.Text.Length - cutoff);
+                int firstDiff = -1;
+                for (firstDiff = 0; firstDiff < tbx_Answer.Text.Length && firstDiff < challengeText.Length; firstDiff++)
+                    if (tbx_Answer.Text[firstDiff] != challengeText[firstDiff])
+                        break;
+                int cutoff = tbx_Answer.Text.LastIndexOf('\n', firstDiff);
+                tbx_Answer.Text = tbx_Answer.Text.Substring(0, cutoff + 1);
                 tbx_Answer.SelectionStart = tbx_Answer.Text.Length;
                 tbx_Answer.SelectionLength = 0;
             }
-            else if (lbl_ChallengeText.Text.Equals(tbx_Answer.Text))
+            else if (challengeText.Equals(tbx_Answer.Text))
             {
                 Completed(this, new EventArgs());
                 this.FormClosing -= Challenge_FormClosing;
