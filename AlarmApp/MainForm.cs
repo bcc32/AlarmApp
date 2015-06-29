@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace AlarmApp
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         WMPLib.WindowsMediaPlayer wmPlayer;
         Challenge challengeForm;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             soundFileDialog.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
@@ -48,7 +48,7 @@ namespace AlarmApp
             StopSound();
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
                 e.Cancel = true;
@@ -96,7 +96,7 @@ namespace AlarmApp
             wmPlayer.URL = tbx_SoundFileName.Text;
             wmPlayer.controls.play();
             wmPlayer.PlayStateChange += LoopSound;
-            this.FormClosing += Form1_FormClosing;
+            this.FormClosing += MainForm_FormClosing;
             challengeForm = new Challenge(tbx_ChallengeFileName.Text);
             challengeForm.Completed += challenge_Completed;
             challengeForm.ShowDialog(this);
@@ -113,7 +113,7 @@ namespace AlarmApp
         {
             wmPlayer.PlayStateChange -= LoopSound;
             wmPlayer.controls.stop();
-            this.FormClosing -= Form1_FormClosing;
+            this.FormClosing -= MainForm_FormClosing;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace AlarmApp
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -159,7 +159,7 @@
             this.btn_TryChallenge.UseVisualStyleBackColor = true;
             this.btn_TryChallenge.Click += new System.EventHandler(this.btn_TryChallenge_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -175,7 +175,7 @@
             this.Controls.Add(this.btn_SetAlarm);
             this.Controls.Add(this.lbl_Time);
             this.Controls.Add(this.endTimePicker);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Alarm";
             this.ResumeLayout(false);
             this.PerformLayout();
