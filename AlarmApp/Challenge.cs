@@ -22,7 +22,16 @@ namespace AlarmApp
         {
             InitializeComponent();
             this.filename = filename;
-            lbl_ChallengeText.Text = challengeText = new System.IO.StreamReader(filename).ReadToEnd();
+            using (System.IO.StreamReader reader = new System.IO.StreamReader(filename))
+            {
+                StringBuilder sb = new StringBuilder();
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    sb.AppendLine(line);
+                }
+                lbl_ChallengeText.Text = challengeText = sb.ToString();
+            }
         }
 
         private void Challenge_FormClosing(object sender, FormClosingEventArgs e)
