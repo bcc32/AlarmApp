@@ -53,6 +53,7 @@ namespace AlarmApp
                 tbx_Answer.Text = tbx_Answer.Text.Substring(0, cutoff + 1);
                 tbx_Answer.SelectionStart = tbx_Answer.Text.Length;
                 tbx_Answer.SelectionLength = 0;
+                tbx_Answer.ScrollToCaret();
             }
             else if (challengeText.Equals(tbx_Answer.Text))
             {
