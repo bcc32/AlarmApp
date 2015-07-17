@@ -47,9 +47,6 @@
     <Compile Include="Challenge.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Challenge.Designer.cs">
-      <DependentUpon>Challenge.cs</DependentUpon>
-    </Compile>
     <Compile Include="TextFileChallenge.cs">
       <SubType>Form</SubType>
     </Compile>

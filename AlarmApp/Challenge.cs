@@ -16,7 +16,6 @@ namespace AlarmApp
         public event ChallengeCompletedHandler ChallengeCompleted;
         public Challenge()
         {
-            InitializeComponent();
             this.FormClosing += Challenge_FormClosing;
         }
 
