@@ -20,6 +20,7 @@ namespace AlarmApp
         {
             InitializeComponent();
             soundFileDialog.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
+            challengeFileDialog.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             wmPlayer = new WMPLib.WindowsMediaPlayer();
         }
 
