@@ -172,7 +172,7 @@
             this.radTextFile.Size = new System.Drawing.Size(65, 17);
             this.radTextFile.TabIndex = 9;
             this.radTextFile.TabStop = true;
-            this.radTextFile.Text = "Text File";
+            this.radTextFile.Text = "T&ext File";
             this.radTextFile.UseVisualStyleBackColor = true;
             this.radTextFile.CheckedChanged += new System.EventHandler(this.radTextFile_CheckedChanged);
             // 
@@ -184,7 +184,7 @@
             this.radMathPuzzle.Size = new System.Drawing.Size(83, 17);
             this.radMathPuzzle.TabIndex = 10;
             this.radMathPuzzle.TabStop = true;
-            this.radMathPuzzle.Text = "Math Puzzle";
+            this.radMathPuzzle.Text = "&Math Puzzle";
             this.radMathPuzzle.UseVisualStyleBackColor = true;
             this.radMathPuzzle.CheckedChanged += new System.EventHandler(this.radMathPuzzle_CheckedChanged);
             // 
