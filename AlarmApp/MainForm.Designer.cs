@@ -43,6 +43,8 @@
             this.btn_BrowseChallengeFile = new System.Windows.Forms.Button();
             this.challengeFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.btn_TryChallenge = new System.Windows.Forms.Button();
+            this.radTextFile = new System.Windows.Forms.RadioButton();
+            this.radMathPuzzle = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // endTimePicker
@@ -71,10 +73,10 @@
             // 
             // btn_SetAlarm
             // 
-            this.btn_SetAlarm.Location = new System.Drawing.Point(12, 90);
+            this.btn_SetAlarm.Location = new System.Drawing.Point(16, 109);
             this.btn_SetAlarm.Name = "btn_SetAlarm";
-            this.btn_SetAlarm.Size = new System.Drawing.Size(256, 23);
-            this.btn_SetAlarm.TabIndex = 9;
+            this.btn_SetAlarm.Size = new System.Drawing.Size(252, 23);
+            this.btn_SetAlarm.TabIndex = 11;
             this.btn_SetAlarm.Text = "Set &Alarm";
             this.btn_SetAlarm.UseVisualStyleBackColor = true;
             this.btn_SetAlarm.Click += new System.EventHandler(this.btn_SetAlarm_Click);
@@ -151,19 +153,50 @@
             // 
             // btn_TryChallenge
             // 
-            this.btn_TryChallenge.Location = new System.Drawing.Point(12, 119);
+            this.btn_TryChallenge.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_TryChallenge.Location = new System.Drawing.Point(16, 138);
             this.btn_TryChallenge.Name = "btn_TryChallenge";
-            this.btn_TryChallenge.Size = new System.Drawing.Size(256, 23);
-            this.btn_TryChallenge.TabIndex = 10;
+            this.btn_TryChallenge.Size = new System.Drawing.Size(252, 23);
+            this.btn_TryChallenge.TabIndex = 12;
             this.btn_TryChallenge.Text = "Tr&y Challenge";
             this.btn_TryChallenge.UseVisualStyleBackColor = true;
             this.btn_TryChallenge.Click += new System.EventHandler(this.btn_TryChallenge_Click);
+            // 
+            // radTextFile
+            // 
+            this.radTextFile.AutoSize = true;
+            this.radTextFile.Checked = true;
+            this.radTextFile.Location = new System.Drawing.Point(16, 86);
+            this.radTextFile.Name = "radTextFile";
+            this.radTextFile.Size = new System.Drawing.Size(65, 17);
+            this.radTextFile.TabIndex = 9;
+            this.radTextFile.TabStop = true;
+            this.radTextFile.Text = "Text File";
+            this.radTextFile.UseVisualStyleBackColor = true;
+            this.radTextFile.CheckedChanged += new System.EventHandler(this.radTextFile_CheckedChanged);
+            // 
+            // radMathPuzzle
+            // 
+            this.radMathPuzzle.AutoSize = true;
+            this.radMathPuzzle.Location = new System.Drawing.Point(87, 86);
+            this.radMathPuzzle.Name = "radMathPuzzle";
+            this.radMathPuzzle.Size = new System.Drawing.Size(83, 17);
+            this.radMathPuzzle.TabIndex = 10;
+            this.radMathPuzzle.TabStop = true;
+            this.radMathPuzzle.Text = "Math Puzzle";
+            this.radMathPuzzle.UseVisualStyleBackColor = true;
+            this.radMathPuzzle.CheckedChanged += new System.EventHandler(this.radMathPuzzle_CheckedChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(280, 151);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(280, 171);
+            this.Controls.Add(this.radMathPuzzle);
+            this.Controls.Add(this.radTextFile);
             this.Controls.Add(this.btn_TryChallenge);
             this.Controls.Add(this.btn_BrowseChallengeFile);
             this.Controls.Add(this.lbl_Challenge);
@@ -198,6 +231,8 @@
         private System.Windows.Forms.OpenFileDialog challengeFileDialog;
         private System.Windows.Forms.Button btn_TryChallenge;
         private System.Windows.Forms.TextBox tbx_ChallengeFileName;
+        private System.Windows.Forms.RadioButton radTextFile;
+        private System.Windows.Forms.RadioButton radMathPuzzle;
     }
 }
 
