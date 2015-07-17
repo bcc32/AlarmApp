@@ -97,8 +97,8 @@ namespace AlarmApp
             wmPlayer.controls.play();
             wmPlayer.PlayStateChange += LoopSound;
             this.FormClosing += MainForm_FormClosing;
-            challengeForm = new Challenge(tbx_ChallengeFileName.Text);
-            challengeForm.Completed += challenge_Completed;
+            challengeForm = new TextFileChallenge(tbx_ChallengeFileName.Text);
+            challengeForm.ChallengeCompleted += challenge_Completed;
             challengeForm.ShowDialog(this);
         }
 
