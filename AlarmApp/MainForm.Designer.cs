@@ -54,7 +54,7 @@
             this.endTimePicker.Location = new System.Drawing.Point(52, 7);
             this.endTimePicker.Name = "endTimePicker";
             this.endTimePicker.ShowUpDown = true;
-            this.endTimePicker.Size = new System.Drawing.Size(96, 20);
+            this.endTimePicker.Size = new System.Drawing.Size(53, 20);
             this.endTimePicker.TabIndex = 1;
             this.endTimePicker.Value = new System.DateTime(2015, 6, 28, 0, 0, 0, 0);
             // 
@@ -114,7 +114,7 @@
             // lbl_AlarmSet
             // 
             this.lbl_AlarmSet.AutoSize = true;
-            this.lbl_AlarmSet.Location = new System.Drawing.Point(154, 13);
+            this.lbl_AlarmSet.Location = new System.Drawing.Point(111, 13);
             this.lbl_AlarmSet.Name = "lbl_AlarmSet";
             this.lbl_AlarmSet.Size = new System.Drawing.Size(55, 13);
             this.lbl_AlarmSet.TabIndex = 2;
