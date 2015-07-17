@@ -53,7 +53,7 @@
             this.endTimePicker.Name = "endTimePicker";
             this.endTimePicker.ShowUpDown = true;
             this.endTimePicker.Size = new System.Drawing.Size(96, 20);
-            this.endTimePicker.TabIndex = 0;
+            this.endTimePicker.TabIndex = 1;
             this.endTimePicker.Value = new System.DateTime(2015, 6, 28, 0, 0, 0, 0);
             // 
             // lbl_Time
@@ -62,7 +62,7 @@
             this.lbl_Time.Location = new System.Drawing.Point(13, 13);
             this.lbl_Time.Name = "lbl_Time";
             this.lbl_Time.Size = new System.Drawing.Size(33, 13);
-            this.lbl_Time.TabIndex = 1;
+            this.lbl_Time.TabIndex = 0;
             this.lbl_Time.Text = "&Time:";
             // 
             // alarmTimer
@@ -74,7 +74,7 @@
             this.btn_SetAlarm.Location = new System.Drawing.Point(12, 90);
             this.btn_SetAlarm.Name = "btn_SetAlarm";
             this.btn_SetAlarm.Size = new System.Drawing.Size(256, 23);
-            this.btn_SetAlarm.TabIndex = 2;
+            this.btn_SetAlarm.TabIndex = 9;
             this.btn_SetAlarm.Text = "Set &Alarm";
             this.btn_SetAlarm.UseVisualStyleBackColor = true;
             this.btn_SetAlarm.Click += new System.EventHandler(this.btn_SetAlarm_Click);
@@ -115,7 +115,7 @@
             this.lbl_AlarmSet.Location = new System.Drawing.Point(154, 13);
             this.lbl_AlarmSet.Name = "lbl_AlarmSet";
             this.lbl_AlarmSet.Size = new System.Drawing.Size(55, 13);
-            this.lbl_AlarmSet.TabIndex = 6;
+            this.lbl_AlarmSet.TabIndex = 2;
             this.lbl_AlarmSet.Text = "Alarm Set!";
             this.lbl_AlarmSet.Visible = false;
             // 
@@ -132,7 +132,7 @@
             this.lbl_Challenge.Location = new System.Drawing.Point(13, 63);
             this.lbl_Challenge.Name = "lbl_Challenge";
             this.lbl_Challenge.Size = new System.Drawing.Size(57, 13);
-            this.lbl_Challenge.TabIndex = 8;
+            this.lbl_Challenge.TabIndex = 6;
             this.lbl_Challenge.Text = "&Challenge:";
             // 
             // btn_BrowseChallengeFile
@@ -140,7 +140,7 @@
             this.btn_BrowseChallengeFile.Location = new System.Drawing.Point(193, 58);
             this.btn_BrowseChallengeFile.Name = "btn_BrowseChallengeFile";
             this.btn_BrowseChallengeFile.Size = new System.Drawing.Size(75, 23);
-            this.btn_BrowseChallengeFile.TabIndex = 9;
+            this.btn_BrowseChallengeFile.TabIndex = 8;
             this.btn_BrowseChallengeFile.Text = "B&rowse...";
             this.btn_BrowseChallengeFile.UseVisualStyleBackColor = true;
             this.btn_BrowseChallengeFile.Click += new System.EventHandler(this.btn_BrowseChallengeFile_Click);
