@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -82,6 +83,15 @@ namespace AlarmApp
             tbx_SoundFileName.Text = soundFileDialog.FileName;
         }
 
+        [DllImport("user32.dll")]
+        private static extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
+
+        private void IncreaseVolume()
+        {
+            // http://www.neowin.net/forum/topic/262787-c-adjusting-system-sound-volume/
+            SendMessageW(this.Handle, 0x319, this.Handle, (IntPtr)0xA0000);
+        }
+
         private TimeSpan IntervalToEndTime()
         {
             DateTime endTime = endTimePicker.Value;
@@ -119,6 +129,8 @@ namespace AlarmApp
             wmPlayer.URL = tbx_SoundFileName.Text;
             wmPlayer.controls.play();
             wmPlayer.PlayStateChange += LoopSound;
+            cbx_volumeUp.Enabled = false;
+            volumeUpTimer.Enabled = true;
             this.FormClosing += MainForm_FormClosing;
             challengeForm.ChallengeCompleted += challenge_Completed;
             challengeForm.ShowDialog(this);
@@ -136,12 +148,22 @@ namespace AlarmApp
             wmPlayer.PlayStateChange -= LoopSound;
             wmPlayer.controls.stop();
             this.FormClosing -= MainForm_FormClosing;
+            volumeUpTimer.Enabled = false;
+            cbx_volumeUp.Enabled = true;
         }
 
         private void UpdateChallengeFileEnabled()
         {
             tbx_ChallengeFileName.Enabled = radTextFile.Checked;
             btn_BrowseChallengeFile.Enabled = radTextFile.Checked;
+        }
+
+        private void volumeUpTimer_Tick(object sender, EventArgs e)
+        {
+            if (cbx_volumeUp.Checked)
+            {
+                IncreaseVolume();
+            }
         }
     }
 }

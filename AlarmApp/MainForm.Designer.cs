@@ -45,6 +45,8 @@
             this.btn_TryChallenge = new System.Windows.Forms.Button();
             this.radTextFile = new System.Windows.Forms.RadioButton();
             this.radMathPuzzle = new System.Windows.Forms.RadioButton();
+            this.volumeUpTimer = new System.Windows.Forms.Timer(this.components);
+            this.cbx_volumeUp = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // endTimePicker
@@ -188,6 +190,21 @@
             this.radMathPuzzle.UseVisualStyleBackColor = true;
             this.radMathPuzzle.CheckedChanged += new System.EventHandler(this.radMathPuzzle_CheckedChanged);
             // 
+            // volumeUpTimer
+            // 
+            this.volumeUpTimer.Interval = 25;
+            this.volumeUpTimer.Tick += new System.EventHandler(this.volumeUpTimer_Tick);
+            // 
+            // cbx_volumeUp
+            // 
+            this.cbx_volumeUp.AutoSize = true;
+            this.cbx_volumeUp.Location = new System.Drawing.Point(176, 87);
+            this.cbx_volumeUp.Name = "cbx_volumeUp";
+            this.cbx_volumeUp.Size = new System.Drawing.Size(90, 17);
+            this.cbx_volumeUp.TabIndex = 13;
+            this.cbx_volumeUp.Text = "Volume 100%";
+            this.cbx_volumeUp.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +212,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(280, 171);
+            this.Controls.Add(this.cbx_volumeUp);
             this.Controls.Add(this.radMathPuzzle);
             this.Controls.Add(this.radTextFile);
             this.Controls.Add(this.btn_TryChallenge);
@@ -233,6 +251,8 @@
         private System.Windows.Forms.TextBox tbx_ChallengeFileName;
         private System.Windows.Forms.RadioButton radTextFile;
         private System.Windows.Forms.RadioButton radMathPuzzle;
+        private System.Windows.Forms.Timer volumeUpTimer;
+        private System.Windows.Forms.CheckBox cbx_volumeUp;
     }
 }
 
