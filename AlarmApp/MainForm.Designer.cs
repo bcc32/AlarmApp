@@ -46,7 +46,9 @@
             this.radTextFile = new System.Windows.Forms.RadioButton();
             this.radMathPuzzle = new System.Windows.Forms.RadioButton();
             this.volumeUpTimer = new System.Windows.Forms.Timer(this.components);
-            this.cbx_volumeUp = new System.Windows.Forms.CheckBox();
+            this.lbl_Volume = new System.Windows.Forms.Label();
+            this.updn_Volume = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.updn_Volume)).BeginInit();
             this.SuspendLayout();
             // 
             // endTimePicker
@@ -78,7 +80,7 @@
             this.btn_SetAlarm.Location = new System.Drawing.Point(16, 109);
             this.btn_SetAlarm.Name = "btn_SetAlarm";
             this.btn_SetAlarm.Size = new System.Drawing.Size(252, 23);
-            this.btn_SetAlarm.TabIndex = 11;
+            this.btn_SetAlarm.TabIndex = 13;
             this.btn_SetAlarm.Text = "Set &Alarm";
             this.btn_SetAlarm.UseVisualStyleBackColor = true;
             this.btn_SetAlarm.Click += new System.EventHandler(this.btn_SetAlarm_Click);
@@ -160,7 +162,7 @@
             this.btn_TryChallenge.Location = new System.Drawing.Point(16, 138);
             this.btn_TryChallenge.Name = "btn_TryChallenge";
             this.btn_TryChallenge.Size = new System.Drawing.Size(252, 23);
-            this.btn_TryChallenge.TabIndex = 12;
+            this.btn_TryChallenge.TabIndex = 14;
             this.btn_TryChallenge.Text = "Tr&y Challenge";
             this.btn_TryChallenge.UseVisualStyleBackColor = true;
             this.btn_TryChallenge.Click += new System.EventHandler(this.btn_TryChallenge_Click);
@@ -195,15 +197,31 @@
             this.volumeUpTimer.Interval = 25;
             this.volumeUpTimer.Tick += new System.EventHandler(this.volumeUpTimer_Tick);
             // 
-            // cbx_volumeUp
+            // lbl_Volume
             // 
-            this.cbx_volumeUp.AutoSize = true;
-            this.cbx_volumeUp.Location = new System.Drawing.Point(176, 87);
-            this.cbx_volumeUp.Name = "cbx_volumeUp";
-            this.cbx_volumeUp.Size = new System.Drawing.Size(90, 17);
-            this.cbx_volumeUp.TabIndex = 13;
-            this.cbx_volumeUp.Text = "Volume 100%";
-            this.cbx_volumeUp.UseVisualStyleBackColor = true;
+            this.lbl_Volume.AutoSize = true;
+            this.lbl_Volume.Location = new System.Drawing.Point(176, 88);
+            this.lbl_Volume.Name = "lbl_Volume";
+            this.lbl_Volume.Size = new System.Drawing.Size(42, 13);
+            this.lbl_Volume.TabIndex = 11;
+            this.lbl_Volume.Text = "Volume";
+            // 
+            // updn_Volume
+            // 
+            this.updn_Volume.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.updn_Volume.Location = new System.Drawing.Point(224, 86);
+            this.updn_Volume.Name = "updn_Volume";
+            this.updn_Volume.Size = new System.Drawing.Size(44, 20);
+            this.updn_Volume.TabIndex = 12;
+            this.updn_Volume.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // MainForm
             // 
@@ -212,7 +230,8 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(280, 171);
-            this.Controls.Add(this.cbx_volumeUp);
+            this.Controls.Add(this.updn_Volume);
+            this.Controls.Add(this.lbl_Volume);
             this.Controls.Add(this.radMathPuzzle);
             this.Controls.Add(this.radTextFile);
             this.Controls.Add(this.btn_TryChallenge);
@@ -228,6 +247,7 @@
             this.Controls.Add(this.endTimePicker);
             this.Name = "MainForm";
             this.Text = "Alarm";
+            ((System.ComponentModel.ISupportInitialize)(this.updn_Volume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,7 +272,8 @@
         private System.Windows.Forms.RadioButton radTextFile;
         private System.Windows.Forms.RadioButton radMathPuzzle;
         private System.Windows.Forms.Timer volumeUpTimer;
-        private System.Windows.Forms.CheckBox cbx_volumeUp;
+        private System.Windows.Forms.Label lbl_Volume;
+        private System.Windows.Forms.NumericUpDown updn_Volume;
     }
 }
 

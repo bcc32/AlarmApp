@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AudioSwitcher.AudioApi.CoreAudio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace AlarmApp
     public partial class MainForm : Form
     {
         WMPLib.WindowsMediaPlayer wmPlayer;
+        CoreAudioDevice defaultPlaybackDevice;
         Challenge challengeForm;
 
         public MainForm()
@@ -23,6 +25,7 @@ namespace AlarmApp
             soundFileDialog.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyMusic);
             challengeFileDialog.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             wmPlayer = new WMPLib.WindowsMediaPlayer();
+            defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
         }
 
         private void alarmTimer_Tick(object sender, EventArgs e)
@@ -83,15 +86,6 @@ namespace AlarmApp
             tbx_SoundFileName.Text = soundFileDialog.FileName;
         }
 
-        [DllImport("user32.dll")]
-        private static extern IntPtr SendMessageW(IntPtr hWnd, int Msg, IntPtr wParam, IntPtr lParam);
-
-        private void IncreaseVolume()
-        {
-            // http://www.neowin.net/forum/topic/262787-c-adjusting-system-sound-volume/
-            SendMessageW(this.Handle, 0x319, this.Handle, (IntPtr)0xA0000);
-        }
-
         private TimeSpan IntervalToEndTime()
         {
             DateTime endTime = endTimePicker.Value;
@@ -129,8 +123,8 @@ namespace AlarmApp
             wmPlayer.URL = tbx_SoundFileName.Text;
             wmPlayer.controls.play();
             wmPlayer.PlayStateChange += LoopSound;
-            cbx_volumeUp.Enabled = false;
             volumeUpTimer.Enabled = true;
+            updn_Volume.Enabled = false;
             this.FormClosing += MainForm_FormClosing;
             challengeForm.ChallengeCompleted += challenge_Completed;
             challengeForm.ShowDialog(this);
@@ -149,7 +143,7 @@ namespace AlarmApp
             wmPlayer.controls.stop();
             this.FormClosing -= MainForm_FormClosing;
             volumeUpTimer.Enabled = false;
-            cbx_volumeUp.Enabled = true;
+            updn_Volume.Enabled = true;
         }
 
         private void UpdateChallengeFileEnabled()
@@ -160,10 +154,7 @@ namespace AlarmApp
 
         private void volumeUpTimer_Tick(object sender, EventArgs e)
         {
-            if (cbx_volumeUp.Checked)
-            {
-                IncreaseVolume();
-            }
+            defaultPlaybackDevice.Volume = (double)updn_Volume.Value;
         }
     }
 }
